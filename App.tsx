@@ -9,6 +9,11 @@ import {
   View,
 } from 'react-native';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {
+  SafeAreaProvider,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context';
+import UnityView from '@azesmway/react-native-unity';
 
 enum RootRoutes {
   HOME = 'Home',
@@ -28,8 +33,9 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const HomeScreen: React.FC<RootStackScreenProps<RootRoutes.HOME>> = ({
   navigation,
 }) => {
+  const insets = useSafeAreaInsets();
   return (
-    <View style={styles.screen}>
+    <View style={[styles.screen, {paddingBottom: Math.max(insets.bottom, 15)}]}>
       <Text style={styles.welcomeText}>
         Hello, from{' '}
         <Text style={[styles.welcomeText, styles.purple]}>dev.family</Text> team
@@ -46,23 +52,25 @@ const HomeScreen: React.FC<RootStackScreenProps<RootRoutes.HOME>> = ({
 };
 
 const UnityScreen = () => {
-  return <View style={styles.screen} />;
+  return <UnityView style={{flex: 1}} />;
 };
 
 const App = () => {
   return (
     <View style={{flex: 1}}>
       <StatusBar backgroundColor={'#FFF'} barStyle="dark-content" />
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerTintColor: 'purple',
-            headerTitleStyle: {color: 'black'},
-          }}>
-          <Stack.Screen name={RootRoutes.HOME} component={HomeScreen} />
-          <Stack.Screen name={RootRoutes.UNITY} component={UnityScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerTintColor: 'purple',
+              headerTitleStyle: {color: 'black'},
+            }}>
+            <Stack.Screen name={RootRoutes.HOME} component={HomeScreen} />
+            <Stack.Screen name={RootRoutes.UNITY} component={UnityScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
     </View>
   );
 };
@@ -82,7 +90,6 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 16,
     marginTop: 'auto',
-    marginBottom: 'auto',
   },
   purple: {color: 'purple'},
   buttonText: {

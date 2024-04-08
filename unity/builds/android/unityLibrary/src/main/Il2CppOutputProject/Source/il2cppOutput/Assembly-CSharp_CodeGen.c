@@ -1,0 +1,107 @@
+﻿#include "pch-c.h"
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void BirdScript_KillBird_m47360DC703A0DD043F95C3E02CE8237D5D7F20CB (void);
+extern void BirdScript_Awake_mD61712E26F112AA2DBF29B93CC0FF2D2BB0466D8 (void);
+extern void BirdScript_Update_m8DC3D4921DDCBB4A125C991BF800743AE3BB0BA9 (void);
+extern void BirdScript_OnBecameInvisible_mABD73C0A2D759EB08916E251045D5D9C1CF1E8B7 (void);
+extern void BirdScript_OnCollisionEnter2D_mEDFB290CEE1282B97059469B50B052CFC28D56A5 (void);
+extern void BirdScript__ctor_m462834A208EFAAA70DE786E844224546E7068EE4 (void);
+extern void LogicManagerScript_IncreaseScore_m35553FF3F99CA6430A780547F0B0E19176F13C4E (void);
+extern void LogicManagerScript_RestartGame_m5EEFB9CC69BD1D58F4D5BF1A436651B79438284B (void);
+extern void LogicManagerScript_GameOver_m94E7FC1ABF89FE7EC429A87A2CD3C5EB1B0BC2A3 (void);
+extern void LogicManagerScript_StartGame_m153D9DB85426ED50E39FAAA357B871F8AC20FBDE (void);
+extern void LogicManagerScript__ctor_mABB5E6FB19F62246681641586EB72BE5619C5DFE (void);
+extern void MiddleColiderScript_Awake_m3D0DFA22DF7842403AD79D4222501065FE749AF0 (void);
+extern void MiddleColiderScript_OnTriggerEnter2D_m5D4CA606DFB926B842D488155648151CDCDFDC28 (void);
+extern void MiddleColiderScript__ctor_m24DB3A259D1FBC6EB0ED0491C6ACA2AA771680F1 (void);
+extern void PipeScipt_Update_m5AB7F4CD457A71DCBF59C69A295CE98FCDF40F58 (void);
+extern void PipeScipt__ctor_mA47DC7F6929DB3EE2E73072187E94C09CC23F0C9 (void);
+extern void PipeSpawnerScript_SpawnPipe_m5B54E5CC065C630668436E9A3685BE2C4CEF3037 (void);
+extern void PipeSpawnerScript_Start_mDE4C6F87339B6637F5856282FC1E7D2F0F13A3E1 (void);
+extern void PipeSpawnerScript_Update_m8B4F18088AD68882FA83D906B852CA8651267D6E (void);
+extern void PipeSpawnerScript__ctor_m4704F8A92EC0A72A0EA1460C161F48337F36B50B (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
+static Il2CppMethodPointer s_methodPointers[22] = 
+{
+	BirdScript_KillBird_m47360DC703A0DD043F95C3E02CE8237D5D7F20CB,
+	BirdScript_Awake_mD61712E26F112AA2DBF29B93CC0FF2D2BB0466D8,
+	BirdScript_Update_m8DC3D4921DDCBB4A125C991BF800743AE3BB0BA9,
+	BirdScript_OnBecameInvisible_mABD73C0A2D759EB08916E251045D5D9C1CF1E8B7,
+	BirdScript_OnCollisionEnter2D_mEDFB290CEE1282B97059469B50B052CFC28D56A5,
+	BirdScript__ctor_m462834A208EFAAA70DE786E844224546E7068EE4,
+	LogicManagerScript_IncreaseScore_m35553FF3F99CA6430A780547F0B0E19176F13C4E,
+	LogicManagerScript_RestartGame_m5EEFB9CC69BD1D58F4D5BF1A436651B79438284B,
+	LogicManagerScript_GameOver_m94E7FC1ABF89FE7EC429A87A2CD3C5EB1B0BC2A3,
+	LogicManagerScript_StartGame_m153D9DB85426ED50E39FAAA357B871F8AC20FBDE,
+	LogicManagerScript__ctor_mABB5E6FB19F62246681641586EB72BE5619C5DFE,
+	MiddleColiderScript_Awake_m3D0DFA22DF7842403AD79D4222501065FE749AF0,
+	MiddleColiderScript_OnTriggerEnter2D_m5D4CA606DFB926B842D488155648151CDCDFDC28,
+	MiddleColiderScript__ctor_m24DB3A259D1FBC6EB0ED0491C6ACA2AA771680F1,
+	PipeScipt_Update_m5AB7F4CD457A71DCBF59C69A295CE98FCDF40F58,
+	PipeScipt__ctor_mA47DC7F6929DB3EE2E73072187E94C09CC23F0C9,
+	PipeSpawnerScript_SpawnPipe_m5B54E5CC065C630668436E9A3685BE2C4CEF3037,
+	PipeSpawnerScript_Start_mDE4C6F87339B6637F5856282FC1E7D2F0F13A3E1,
+	PipeSpawnerScript_Update_m8B4F18088AD68882FA83D906B852CA8651267D6E,
+	PipeSpawnerScript__ctor_m4704F8A92EC0A72A0EA1460C161F48337F36B50B,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
+};
+static const int32_t s_InvokerIndices[22] = 
+{
+	5860,
+	5860,
+	5860,
+	5860,
+	4657,
+	5860,
+	4628,
+	5860,
+	5860,
+	5860,
+	5860,
+	5860,
+	4657,
+	5860,
+	5860,
+	5860,
+	5860,
+	5860,
+	5860,
+	5860,
+	11201,
+	5860,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	22,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};
