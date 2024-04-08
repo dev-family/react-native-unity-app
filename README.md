@@ -41,6 +41,6 @@ yarn run android
 
 ## Attention
 
-In this project installed Unity builds for android && ios. But this build is for **DEMO** purpose only!
+In this project can de found Unity builds for android && ios. But this build is for **DEMO** purpose only!
 To run the app without errors - you will need to install builds again.
 You can find initial [Unity Project here](https://github.com/GilTRipper/flappy-bird-clone)
