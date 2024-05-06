@@ -8,7 +8,6 @@ pluginManagement {
 }
 
 include ':launcher', ':unityLibrary'
-include 'unityLibrary:mobilenotifications.androidlib'
 
 
 dependencyResolutionManagement {
