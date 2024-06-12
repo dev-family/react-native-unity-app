@@ -69,4 +69,4 @@ yarn-error.log
 /unity/builds/android/unityLibrary/symbols
 /ios/unityBuild*
 /unity/builds/android_BurstDebugInformation_DoNotShip
-
+/unity/builds/ios/UnityFramework.framework
