@@ -10,6 +10,17 @@
 #include <limits>
 
 
+template <typename T1>
+struct VirtualActionInvoker1
+{
+	typedef void (*Action)(void*, T1, const RuntimeMethod*);
+
+	static inline void Invoke (Il2CppMethodSlot slot, RuntimeObject* obj, T1 p1)
+	{
+		const VirtualInvokeData& invokeData = il2cpp_codegen_get_virtual_invoke_data(slot, obj);
+		((Action)invokeData.methodPtr)(obj, p1, invokeData.method);
+	}
+};
 template <typename R>
 struct VirtualFuncInvoker0
 {
@@ -27,14 +38,17 @@ struct AdaptivePerformanceScalerProfileU5BU5D_t502F55D3686CAB852984FDB6F92431963
 struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031;
 struct CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB;
 struct AdaptivePerformanceGeneralSettings_tB55BA22C43C64C564E1E064B5FA9768EBF8DEFD8;
+struct AdaptivePerformanceIndexer_tE43B4A07AF7944322BA939E2D4F8AE90AD42EF73;
 struct AdaptivePerformanceIndexerSettings_t3D9418B7302C8FCA3344719FF10FBADFD2F1CDC6;
 struct AdaptivePerformanceLoader_tF12F9ABBB7711A0FDE47852B1F358EAD7664F54E;
 struct AdaptivePerformanceManagerSettings_t825765630D775605D6E53BE60D90E50CCDDF30C2;
 struct AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8;
 struct AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA;
 struct AdaptivePerformanceSettings_tDAE6BC418ADCAB0349C798B096373570588FB89E;
+struct AdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4;
 struct CancellationTokenSource_tAAE1E0033BCFC233801F8CB4CED5C852B350CB7B;
 struct IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8;
+struct IVariableRefreshRate_t85984F283B615BA6B004DC87C757980AA2452A85;
 struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71;
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;
 struct String_t;
@@ -53,6 +67,7 @@ IL2CPP_EXTERN_C RuntimeClass* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_i
 IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t9AA7E387908D486F164D28F70F36BA1E4A0BDF22____58A8A8B391A17EB02333B1775B8BFF96A54AAFEB916DC1F9596D41E2B320DCED_FieldInfo_var;
 IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t9AA7E387908D486F164D28F70F36BA1E4A0BDF22____8AFF84C47F48DAAEF4A5995113212AB15440D365A26908B0511BF829FDAC654E_FieldInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteralC822DC6ABCEFAD600372ED3C41907A8331E122B9;
+IL2CPP_EXTERN_C const RuntimeMethod* Object_FindObjectOfType_TisAdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4_m73B2D424B15BA7CD767DEA09FF3615AEFCF9EE52_RuntimeMethod_var;
 
 struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031;
 
@@ -108,6 +123,21 @@ struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_pinvoke
 };
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_com
 {
+};
+struct AdaptivePerformanceScalerEvent_t4FB8CAC39F9A8788AB10F7B8E579B0A4FB56558D 
+{
+	String_t* ___Name;
+	int32_t ___Level;
+};
+struct AdaptivePerformanceScalerEvent_t4FB8CAC39F9A8788AB10F7B8E579B0A4FB56558D_marshaled_pinvoke
+{
+	char* ___Name;
+	int32_t ___Level;
+};
+struct AdaptivePerformanceScalerEvent_t4FB8CAC39F9A8788AB10F7B8E579B0A4FB56558D_marshaled_com
+{
+	Il2CppChar* ___Name;
+	int32_t ___Level;
 };
 struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22 
 {
@@ -263,6 +293,17 @@ struct AdaptivePerformanceManagerSettings_t825765630D775605D6E53BE60D90E50CCDDF3
 	bool ___m_AutomaticRunning;
 	List_1_tD698B2A66D241B0EFFAE6CE4A7882E6E7B3457D3* ___m_Loaders;
 };
+struct AdaptivePerformanceScaler_tB9F76E7E942E332BEF5DC363BE906AD4FD1700BC  : public ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A
+{
+	AdaptivePerformanceIndexer_tE43B4A07AF7944322BA939E2D4F8AE90AD42EF73* ___m_Indexer;
+	int32_t ___U3CCurrentLevelU3Ek__BackingField;
+	int32_t ___U3CGpuImpactU3Ek__BackingField;
+	int32_t ___U3CCpuImpactU3Ek__BackingField;
+	int32_t ___m_OverrideLevel;
+	AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* ___m_defaultSetting;
+	AdaptivePerformanceScalerEvent_t4FB8CAC39F9A8788AB10F7B8E579B0A4FB56558D ___m_ScalerEvent;
+	IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* ___m_Settings;
+};
 struct Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA  : public Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3
 {
 };
@@ -276,6 +317,10 @@ struct IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8  :
 	AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* ___m_ScalerSettings;
 	AdaptivePerformanceScalerProfileU5BU5D_t502F55D3686CAB852984FDB6F92431963616F4B7* ___m_scalerProfileList;
 	int32_t ___m_DefaultScalerProfilerIndex;
+};
+struct AdaptiveFramerate_t87F82B3C838B42BFDE5277B446D2A9C4674D6104  : public AdaptivePerformanceScaler_tB9F76E7E942E332BEF5DC363BE906AD4FD1700BC
+{
+	int32_t ___m_DefaultFPS;
 };
 struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
 {
@@ -300,6 +345,13 @@ struct AdaptivePerformanceSettings_tDAE6BC418ADCAB0349C798B096373570588FB89E  : 
 	bool ___AdaptivePhysics;
 	bool ___AdaptiveDecals;
 	bool ___AdaptiveLayerCulling;
+};
+struct AdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4  : public AdaptiveFramerate_t87F82B3C838B42BFDE5277B446D2A9C4674D6104
+{
+	bool ___m_AdaptiveVRREnabled;
+	RuntimeObject* ___m_VRR;
+	int32_t ___m_CurrentRefreshRateIndex;
+	int32_t ___m_DefaultRefreshRateIndex;
 };
 struct U3CPrivateImplementationDetailsU3E_t9AA7E387908D486F164D28F70F36BA1E4A0BDF22_StaticFields
 {
@@ -365,6 +417,7 @@ struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031  : public RuntimeArr
 };
 
 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Object_FindObjectOfType_TisRuntimeObject_m02DFBF011F3B59F777A5E521DB2A116DD496E968_gshared (const RuntimeMethod* method) ;
 
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AdaptivePerformanceGeneralSettings_tB55BA22C43C64C564E1E064B5FA9768EBF8DEFD8* AdaptivePerformanceGeneralSettings_get_Instance_mE2728DFE08F4BB68D6491D67C48ADD37A60D69D9_inline (const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Implicit_m93896EF7D68FA113C42D3FE2BC6F661FC7EF514A (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_exists, const RuntimeMethod* method) ;
@@ -396,6 +449,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AdaptivePerformanceScalerSettings
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* AdaptivePerformanceScalerSettings_get_AdaptiveSorting_mE5C2FD1CC0AB0A7AF3F6447C2943D50F40BC1016_inline (AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* AdaptivePerformanceScalerSettings_get_AdaptiveTransparency_m4DA7C35BF8071924D5C8D9B0ADD7C5DDD5E32CE0_inline (AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* AdaptivePerformanceScalerSettings_get_AdaptiveViewDistance_mE7E45AB3EC0919AAF5B9F80D395C676B7B4143A9_inline (AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* __this, const RuntimeMethod* method) ;
+inline AdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4* Object_FindObjectOfType_TisAdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4_m73B2D424B15BA7CD767DEA09FF3615AEFCF9EE52 (const RuntimeMethod* method)
+{
+	return ((  AdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4* (*) (const RuntimeMethod*))Object_FindObjectOfType_TisRuntimeObject_m02DFBF011F3B59F777A5E521DB2A116DD496E968_gshared)(method);
+}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* AdaptivePerformanceScalerSettings_get_AdaptivePhysics_mE5E9D7BEA49BEED8B5F13D87FDE10E890C96FBA1_inline (AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* AdaptivePerformanceScalerSettings_get_AdaptiveDecals_mBDAA020138E8FED45F7AC1F04DAF53736F5CE38D_inline (AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* __this, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* AdaptivePerformanceScalerSettings_get_AdaptiveLayerCulling_mC291EA5E26B73A0660A5B333B9DD7D7395F5FFDE_inline (AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* __this, const RuntimeMethod* method) ;
@@ -491,7 +548,7 @@ IL_002f:
 		L_10 = AdaptivePerformanceManagerSettings_get_activeLoader_m437ADEEB204181146DAB13B27D6752C74CEACD6F_inline(L_9, NULL);
 		NullCheck(L_10);
 		IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* L_11;
-		L_11 = VirtualFuncInvoker0< IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* >::Invoke(10, L_10);
+		L_11 = VirtualFuncInvoker0< IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* >::Invoke(12, L_10);
 		V_0 = L_11;
 		IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* L_12 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -554,10 +611,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AdaptivePerformanceSettings_Awake_m90568
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AdaptivePerformanceGeneralSettings_tB55BA22C43C64C564E1E064B5FA9768EBF8DEFD8_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_FindObjectOfType_TisAdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4_m73B2D424B15BA7CD767DEA09FF3615AEFCF9EE52_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* V_0 = NULL;
+	AdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4* V_1 = NULL;
 	{
 		il2cpp_codegen_runtime_class_init_inline(AdaptivePerformanceGeneralSettings_tB55BA22C43C64C564E1E064B5FA9768EBF8DEFD8_il2cpp_TypeInfo_var);
 		AdaptivePerformanceGeneralSettings_tB55BA22C43C64C564E1E064B5FA9768EBF8DEFD8* L_0;
@@ -619,7 +678,7 @@ IL_002f:
 		L_10 = AdaptivePerformanceManagerSettings_get_activeLoader_m437ADEEB204181146DAB13B27D6752C74CEACD6F_inline(L_9, NULL);
 		NullCheck(L_10);
 		IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* L_11;
-		L_11 = VirtualFuncInvoker0< IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* >::Invoke(10, L_10);
+		L_11 = VirtualFuncInvoker0< IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* >::Invoke(12, L_10);
 		V_0 = L_11;
 		IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* L_12 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -766,36 +825,57 @@ IL_004e:
 		bool L_65 = __this->___AdaptiveViewDistance;
 		NullCheck(L_64);
 		AdaptivePerformanceScalerSettingsBase_set_enabled_m9ED5BD57BEF1EEA325609F4B29288390492797B8_inline(L_64, L_65, NULL);
-		IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* L_66 = V_0;
-		NullCheck(L_66);
-		AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* L_67;
-		L_67 = IAdaptivePerformanceSettings_get_scalerSettings_mB33C0AAA3A6CA0B05E9B1E205853D1698A088575_inline(L_66, NULL);
-		NullCheck(L_67);
-		AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* L_68;
-		L_68 = AdaptivePerformanceScalerSettings_get_AdaptivePhysics_mE5E9D7BEA49BEED8B5F13D87FDE10E890C96FBA1_inline(L_67, NULL);
-		bool L_69 = __this->___AdaptivePhysics;
-		NullCheck(L_68);
-		AdaptivePerformanceScalerSettingsBase_set_enabled_m9ED5BD57BEF1EEA325609F4B29288390492797B8_inline(L_68, L_69, NULL);
-		IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* L_70 = V_0;
-		NullCheck(L_70);
-		AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* L_71;
-		L_71 = IAdaptivePerformanceSettings_get_scalerSettings_mB33C0AAA3A6CA0B05E9B1E205853D1698A088575_inline(L_70, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		AdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4* L_66;
+		L_66 = Object_FindObjectOfType_TisAdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4_m73B2D424B15BA7CD767DEA09FF3615AEFCF9EE52(Object_FindObjectOfType_TisAdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4_m73B2D424B15BA7CD767DEA09FF3615AEFCF9EE52_RuntimeMethod_var);
+		V_1 = L_66;
+		AdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4* L_67 = V_1;
+		bool L_68;
+		L_68 = Object_op_Implicit_m93896EF7D68FA113C42D3FE2BC6F661FC7EF514A(L_67, NULL);
+		if (!L_68)
+		{
+			goto IL_0186;
+		}
+	}
+	{
+		AdaptiveVariableRefreshRate_tAEC009151419AD9BF86B44283692F0C4CD9794A4* L_69 = V_1;
+		bool L_70 = __this->___AdaptiveVRR;
+		NullCheck(L_69);
+		VirtualActionInvoker1< bool >::Invoke(7, L_69, L_70);
+	}
+
+IL_0186:
+	{
+		IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* L_71 = V_0;
 		NullCheck(L_71);
-		AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* L_72;
-		L_72 = AdaptivePerformanceScalerSettings_get_AdaptiveDecals_mBDAA020138E8FED45F7AC1F04DAF53736F5CE38D_inline(L_71, NULL);
-		bool L_73 = __this->___AdaptiveDecals;
+		AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* L_72;
+		L_72 = IAdaptivePerformanceSettings_get_scalerSettings_mB33C0AAA3A6CA0B05E9B1E205853D1698A088575_inline(L_71, NULL);
 		NullCheck(L_72);
-		AdaptivePerformanceScalerSettingsBase_set_enabled_m9ED5BD57BEF1EEA325609F4B29288390492797B8_inline(L_72, L_73, NULL);
-		IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* L_74 = V_0;
-		NullCheck(L_74);
-		AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* L_75;
-		L_75 = IAdaptivePerformanceSettings_get_scalerSettings_mB33C0AAA3A6CA0B05E9B1E205853D1698A088575_inline(L_74, NULL);
+		AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* L_73;
+		L_73 = AdaptivePerformanceScalerSettings_get_AdaptivePhysics_mE5E9D7BEA49BEED8B5F13D87FDE10E890C96FBA1_inline(L_72, NULL);
+		bool L_74 = __this->___AdaptivePhysics;
+		NullCheck(L_73);
+		AdaptivePerformanceScalerSettingsBase_set_enabled_m9ED5BD57BEF1EEA325609F4B29288390492797B8_inline(L_73, L_74, NULL);
+		IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* L_75 = V_0;
 		NullCheck(L_75);
-		AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* L_76;
-		L_76 = AdaptivePerformanceScalerSettings_get_AdaptiveLayerCulling_mC291EA5E26B73A0660A5B333B9DD7D7395F5FFDE_inline(L_75, NULL);
-		bool L_77 = __this->___AdaptiveLayerCulling;
+		AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* L_76;
+		L_76 = IAdaptivePerformanceSettings_get_scalerSettings_mB33C0AAA3A6CA0B05E9B1E205853D1698A088575_inline(L_75, NULL);
 		NullCheck(L_76);
-		AdaptivePerformanceScalerSettingsBase_set_enabled_m9ED5BD57BEF1EEA325609F4B29288390492797B8_inline(L_76, L_77, NULL);
+		AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* L_77;
+		L_77 = AdaptivePerformanceScalerSettings_get_AdaptiveDecals_mBDAA020138E8FED45F7AC1F04DAF53736F5CE38D_inline(L_76, NULL);
+		bool L_78 = __this->___AdaptiveDecals;
+		NullCheck(L_77);
+		AdaptivePerformanceScalerSettingsBase_set_enabled_m9ED5BD57BEF1EEA325609F4B29288390492797B8_inline(L_77, L_78, NULL);
+		IAdaptivePerformanceSettings_tFB49C60F821F093D3F18E8DC115E7D929E6C86C8* L_79 = V_0;
+		NullCheck(L_79);
+		AdaptivePerformanceScalerSettings_tAF8002CE95F36DE71E945DA73AADB6783EB2FFD8* L_80;
+		L_80 = IAdaptivePerformanceSettings_get_scalerSettings_mB33C0AAA3A6CA0B05E9B1E205853D1698A088575_inline(L_79, NULL);
+		NullCheck(L_80);
+		AdaptivePerformanceScalerSettingsBase_tDF99867134986926CE22505B0B9EE99AD74501AA* L_81;
+		L_81 = AdaptivePerformanceScalerSettings_get_AdaptiveLayerCulling_mC291EA5E26B73A0660A5B333B9DD7D7395F5FFDE_inline(L_80, NULL);
+		bool L_82 = __this->___AdaptiveLayerCulling;
+		NullCheck(L_81);
+		AdaptivePerformanceScalerSettingsBase_set_enabled_m9ED5BD57BEF1EEA325609F4B29288390492797B8_inline(L_81, L_82, NULL);
 		return;
 	}
 }
